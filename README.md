@@ -19,9 +19,19 @@ Some reasons to use this over the `preg_*` functions:
 ``` php
 <?php include 'vendor/autoload.php';
 
+use DanDoesCode\RegExp\RegExp;
 use DanDoesCode\RegExp\RE;
 
-$match = RE::match('/"(?<name>[^"]*)"/', 'My name is "Dan".');
+// Use the Facade
+$matches = RE::match('/"(?<name>[^"]*)"/', 'My name is "Dan".');
 
-echo $match['name']; // Outputs: Dan
+// These are equivelent:
+$name = (string) $matchs['name'];
+$name = $matchs['name']->getMatch();
+
+
+// Easy RegExp re-use
+$quotedTextRE = new RegExp('/"(?<text>[^"]*)"/');
+$matches1 = $quotedTextRE->match('My name is "Dan".');
+$matches2 = $quotedTextRE->match('My name is "Joe".');
 ```
