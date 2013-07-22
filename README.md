@@ -25,9 +25,9 @@ use DanDoesCode\RegExp\RE;
 // Use the Facade
 $matches = RE::match('/"(?<name>[^"]*)"/', 'My name is "Dan".');
 
-// These are equivelent:
-$name = (string) $matchs['name'];
-$name = $matchs['name']->getMatch();
+// These are equivalent:
+$name = (string) $matches['name'];
+$name = $matches['name']->getMatch();
 
 
 // Easy RegExp re-use
