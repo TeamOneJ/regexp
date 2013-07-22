@@ -1,6 +1,6 @@
 {
     "name": "dandoescode/regexp",
-    "description": "Easier PHP Regular Expression",
+    "description": "RegExp wrapper for PHP",
     "authors": [
         {
             "name": "Dan Horrigan",
